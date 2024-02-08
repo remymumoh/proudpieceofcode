@@ -1,4 +1,5 @@
-package org.proudcode;
+package org.code.catalog.service;
+
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,7 @@ public class CatalogQueueProcessor {
     private void getMsgEventConsumer(MsgEvent msgEvent) {
         try {
             log.info("Event Type:{} message Ref:{} event time:{}", msgEvent.getType(), msgEvent.getMsgRef(), Instant.now());
+            // I have everything in a try catch so that I do not kill the queue
             switch (msgEvent.getType()) {
                 case PRODUCT_BUNDLE -> productBundleHandler.processProductBundle(msgEvent.getMsgRef());
                 case ITEM_PRICE -> itemPriceHandler.processItemPrice(msgEvent.getMsgRef());

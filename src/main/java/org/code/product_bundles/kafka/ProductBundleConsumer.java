@@ -1,4 +1,4 @@
-package org.proudcode;
+package org.code.product_bundles.kafka;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,9 +21,6 @@ public class ProductBundleConsumer {
     private final ProductService productService;
     private final ProductBundleHandler productBundleHandler;
 
-    /**
-     * Category Data product consumer
-     */
     @KafkaListener(clientIdPrefix = KafkaConstants.BUNDLE_PREFIX,
         containerFactory = "kafkaProtobufManualACKListenerContainerFactory",
         autoStartup = "false",
@@ -35,7 +32,7 @@ public class ProductBundleConsumer {
             partitionOffsets = @PartitionOffset(partition = "*", initialOffset = "0")),
         properties = {
             "specific.protobuf.key.type: java.lang.String",
-            "specific.protobuf.value.type: app.kyosk.selling.product_bundle.v1.ProductBundle"
+            "specific.protobuf.value.type: org.code.selling.product_bundle.v1.ProductBundle"
         }
     )
     public void productRecordConsumer(ProductBundle productBundle, Acknowledgment ack)  {

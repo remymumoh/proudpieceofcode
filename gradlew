@@ -139,7 +139,7 @@ Please set the JAVA_HOME variable in your environment to match the
 location of your Java installation."
 fi
 
-# Increase the maximum file descriptors if we can.
+# Increase the maximum file descriptors if I can.
 if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
     case $MAX_FD in #(
       max*)
@@ -209,12 +209,12 @@ set -- \
 #
 # With -n1 it outputs one arg per line, with the quotes and backslashes removed.
 #
-# In Bash we could simply go:
+# In Bash I could simply go:
 #
 #   readarray ARGS < <( xargs -n1 <<<"$var" ) &&
 #   set -- "${ARGS[@]}" "$@"
 #
-# but POSIX shell has neither arrays nor command substitution, so instead we
+# but POSIX shell has neither arrays nor command substitution, so instead I
 # post-process each arg (as a line of input to sed) to backslash-escape any
 # character that might be a shell metacharacter, then use eval to reverse
 # that process (while maintaining the separation between arguments), and wrap

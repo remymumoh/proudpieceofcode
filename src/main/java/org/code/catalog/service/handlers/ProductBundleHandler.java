@@ -1,4 +1,4 @@
-package org.proudcode;
+package org.code.catalog.service.handlers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +20,9 @@ public class ProductBundleHandler {
     private final CatalogIndex searchIndex;
     private final CatalogProducer catalogProducer;
 
-
+    /**
+     * I only use the product bundle to update the status or the description of an already existing Catalog.
+     */
     public void processProductBundle(String msgRef) {
         log.info("PRODUCT_BUNDLE CATALOG EVENT PROCESS Started{} FOR PB:{}", Instant.now(), msgRef);
 

@@ -1,4 +1,4 @@
-package org.proudcode;
+package org.code.product_bundles.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
